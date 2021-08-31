@@ -5,7 +5,24 @@ import { ContactComponent } from './contact.component';
 
 const routes: Routes = [
   {
-    path: '', component: ContactComponent
+    path: '', component: ContactComponent,children:
+    [
+      {
+        path:'',
+        loadChildren: () => import('./mailing/mailing.module')
+        .then(m => m.MailingModule)
+      },
+      {
+        path: '',
+        loadChildren: () => import('./map/map.module')
+        .then(m => m.MapModule)
+      },
+      {
+        path:'**',
+        loadChildren: () => import('./mailing/mailing.module')
+        .then(m => m.MailingModule)
+      },
+    ]
   },
 ];
 
