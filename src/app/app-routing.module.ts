@@ -11,6 +11,7 @@ import { NotFoundComponent } from './modules/general/not-found/not-found.compone
 
 // *** charger les pages selon la demande avec la théorie '--lazy loading--'
 const routes: Routes = [
+
   {path: '', component: HomeComponent, },
 
   {path: 'about',
